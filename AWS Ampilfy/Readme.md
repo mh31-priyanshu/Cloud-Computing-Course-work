@@ -22,7 +22,7 @@ To Get started go to services in AWS Console and search for AWS Amplify. Our pur
 
 * Give a suitable name for your app
 * Give a meaningful env name e.g. prod, test, dev
-* Select upload method and upload the code (I just drag and dropped the entire directory of the static site)
+* Select upload method and upload the code (I just drag and dropped the entire directory of the static site. You can use the same by downloading zip from [here](https://github.com/mh31-priyanshu/1directionfandom.github.io) and then extracting it.)
 * Now click *Save and Deploy*
 ![Alt text](image-2.png) 
 
