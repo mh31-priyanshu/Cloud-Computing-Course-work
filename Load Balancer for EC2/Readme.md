@@ -74,3 +74,40 @@ You can also explore advance health check options, but i'll leave them as defaul
 <br /> <br />
 Now go back and select this TG that we created as target group-
 ![Alt text](image-10.png)
+
+At last scroll down at the bottom and click on *Create Load balancer* - 
+![Alt text](image-12.png)
+
+Finally our NLB is created. But we have to make sure it is working fine, go to the target group tab and check health status of all the instance. If they all are healthy it's a good sign. If they are Unhealthy go to there SG and make sure all rules are logically correct and meet your goal.
+![Alt text](image-13.png)
+<br /><br />
+Then also check status of our newly create NLB, make sure it's status is active - 
+![Alt text](image-14.png)
+
+Copy the DNS name and paste it in new tab. If it is running like this then you are all set - 
+![Alt text](image-15.png)
+
+<br /> <br />
+To check whether is targetting both instances we'll run a script to send continous request on our load balancer. 
+```bash
+#!/bin/bash
+nlwb="icy-nlb-098298d62083fe48.elb.ap-south-1.amazonaws.com"
+for((i=0;i<=1000;i++))
+do
+    curl ${nlwb}
+done
+```
+In this script we'll send 100 request to our NLB.
+![Alt text](image-16.png)
+
+You can see that with this our load balancer is working perfectly fine.
+
+<br /><br />
+We still have one priblem remaining. Our NLB is working fine but whenever if anyone try to access an ec2 instance with it's public IP, they are able to access it. We don't want that because then there won't be any point to create a Load Balancer if they are able to access our instance using public IPs. <br /> <br /> To solve this problem we have to edit security group of our instance. 
+
+* Delete the existing rule for HTTP and HTTPs
+* Add new rule for HTTP and HTTPs and set source as custom and set it to our NLB. (With this only our NLB will be able to access our instance and no other. Other can access them through NLB) Client -> NLB -> instanceA/instanceB
+![Alt text](image-17.png)
+<br />
+<br />
+Here we can conclude that we've successfully created NLB in AWS for our EC2 instance.
