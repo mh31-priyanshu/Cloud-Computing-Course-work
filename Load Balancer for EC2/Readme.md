@@ -57,4 +57,20 @@ This is one of the most important step. Here we want to define for which kind of
 
 * Choose target type - Instances (As we want our ec2 instances as taegets)
 * Give a suitable name for target group e.g. icy-ec2-tg
-* 
+* Select protocol as TCP - as incoming traffic will be from TCP
+* IP address type - IPv4
+* VPC - if you've created other VPC select accordingly but i'll be going with default
+* Health Check - Set them as HTTP
+![Alt text](image-8.png)
+![Alt text](image-9.png)
+
+You can also explore advance health check options, but i'll leave them as default. Now click on *Next*
+<br /> <br />
+
+* Now select which instance you want to target and click on *Include as pending below*
+* Then review it once and click on *Create target group*
+![Alt text](image-11.png)
+
+<br /> <br />
+Now go back and select this TG that we created as target group-
+![Alt text](image-10.png)
