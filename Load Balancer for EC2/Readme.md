@@ -3,7 +3,7 @@ Class - TY B <br />
 Roll No - 322067 <br />
 PRN - 22220008 <br />
 
-------
+------ 
 ## Network Load Balancer on EC2 Instance ##
 
 * NLB serves as the single point of contact for clients. The load balancer distributes incoming traffic across multiple targets, such as Amazon EC2 instances. This increases the availability of your application. You add one or more listeners to your load balancer.
