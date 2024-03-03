@@ -38,3 +38,44 @@ You can enable bucket versioning as aws will keep track of all the records/logs 
 ![alt text](image-5.png)
 
 Now Click on Create Bucket.
+
+### S3 Configuarations -  ### 
+
+1. Click on bucket and go to Properties tab. At the bottom of it you have to enable static website hosting.
+![alt text](image-6.png)
+
+2. Go to Permission tabs and search for Block public access (bucket settings) and click on Edit. There clear all the checkboxes.
+![alt text](image-7.png)
+If you want to access your static website from outside you've to allow public traffic.
+
+3. After you edit S3 Block Public Access settings, you can add a bucket policy to grant public read access to your bucket. When you grant public read access, anyone on the internet can access your bucket.
+<br /><br />In the same tab go to Bucket Policy and paste the code - 
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1709464970072",
+    "Statement": [
+        {
+            "Sid": "Stmt1709464881958",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::{Bucket-name}/*"
+        }
+    ]
+}
+```
+Put your own bucket name in it. You can also take help of amazon official Policy Generator to generate policy.
+https://awspolicygen.s3.amazonaws.com/policygen.html
+<br /><br />
+
+4. Go to objects tab and upload an index.html file. You can use the one that i'm using in this. Just download and upload these files in the bucket. (Make sure index.html is in the root directory)
+![alt text](image-9.png)
+
+5. Now go to Properties tab and under the static website hosting option copy the URL and open it in new tab. 
+![alt text](image-10.png)
+
+<br />
+<br />
+<br />
+Hence, we've hosted a static website using AWS S3 Bucket.
