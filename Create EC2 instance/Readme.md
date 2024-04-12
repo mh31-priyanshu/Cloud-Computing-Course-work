@@ -4,11 +4,17 @@ Roll No - 322067 <br />
 PRN - 22220008 <br />
 
 ------
-# Assignment 2 #
-## Host a static Website on AWS EC2 Instance ##
+# Assignment 3 #
+## Deploye web application on AWS Cloud ##
+
+### Cloud Computing Definition ###
+- Cloud computing refers to the use of hosted services, such as data storage, servers, databases, networking, and software over the internet. The data is stored on physical servers, which are maintained by a cloud service provider. Computer system resources, especially data storage and computing power, are available on-demand, without direct management by the user in cloud computing.
+
+There are four cloud deployment models: public, private, community, and hybrid. Each deployment model is defined according to where the infrastructure for the environment is located. There are three main cloud service models: Software as a Service, Platform as a Service, and Infrastructure as a Service.
+
 
 First you have to create a free account on AWS to get started. For this it's mandatory to enter details of a Debit/Credit card.
-
+Deploy Web application on AWS Cloud (or any cloud)(PHP/Python/Node js any application)
 ### Create an EC2 instance ###
 
 * Go to services and search for EC2 and click on it 
